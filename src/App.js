@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [ userScore, setUserScore ] = useState(0);
+  const [ compScore, setCompScore ] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="frame">
+      <div className="score">
+        <div className="player-score">{userScore}</div>
+        <div className="computer-score">{compScore}</div>
+      </div>
+      <div className="ball" id="ball"></div>
+      <div className="paddle user" id="user-paddle"></div>
+      <div className="paddle comp" id="comp-paddle"></div>
     </div>
   );
 }
